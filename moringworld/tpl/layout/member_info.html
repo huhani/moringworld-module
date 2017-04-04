@@ -1,0 +1,57 @@
+<div id="menu_member_info">
+
+<div class="top-comment">
+	<h3>회원정보</h3>
+</div>
+
+<fieldset class="memberInfo">
+	<ul>
+
+		<li>
+			<strong>{$lang->nick_name}</strong>: {$logged_info->nick_name}
+		</li>
+
+		<li>
+			<strong>{$lang->regdate}</strong>: {zdate($logged_info->regdate,"Y-m-d H:i")}
+		</li>
+
+		<li>
+			<strong>{$lang->last_login}</strong>: {$logged_info->last_login ? zdate($logged_info->last_login,"Y-m-d H:i") : "-"}
+		</li>
+
+		<li>
+			<strong>{$lang->point}</strong>: {$point} 포인트 ({$percent}%)
+		</li>
+
+		<li>
+			<strong>{$lang->level}</strong>: <img src="/modules/point/icons/coa/{$level}.gif" style="vertical-align:middle"> ({$level}/{$level_max})
+		</li>
+
+	</ul>
+</fieldset>
+
+<ul class="memberInfo-Btn">
+	<li class="unit">
+		<a class="changeInfo d1_btn" href="javascript:;">정보수정</a>
+	</li>
+	<li class="unit">
+		<a class="changePW d1_btn" href="javascript:;">비번변경</a>
+	</li> 
+	<li class="unit">
+		<a class="logout d1_btn" href="javascript:;">로그아웃</a>
+	</li> 
+</ul>
+
+<ul class="memberInfo-Btn">
+	<li class="unit">
+		<a class="scrap d1_btn" href="javascript:;">스크랩</a>
+	</li>
+	<li class="unit">
+		<a class="writeDoc d1_btn" href="javascript:;">작성글</a>
+	</li> 
+	<li class="unit">
+		<a class="writeCmt d1_btn" href="javascript:;">작성댓글</a>
+	</li> 
+</ul>
+
+</div>

@@ -1,0 +1,35 @@
+<div id="menu_member_info">
+
+<div class="top-comment">
+	<h3>작성댓글 보기 <strong>[{$total_count}]</strong><button type="button" class="d1_btn" id="menu_member_back">돌아가기</button></h3>
+</div>
+
+<ul cond="$comment_list" id="list-member">
+	<li loop="$comment_list => $no, $val">
+
+		<a href="{getUrl('', 'mid', $val->mid, 'document_srl', $val->document_srl, 'comment_srl', $val->comment_srl, 'cpage_detect', 1)}#comment_{$val->comment_srl}">
+			<span class="title">{htmlspecialchars(cut_str(strip_tags($val->content), 30), ENT_COMPAT | ENT_HTML401, 'UTF-8', false)}</span>
+			<span class="auth">
+				<span class="bTitle">{$val->browser_title}</span>
+				<span class="member_{$val->member_srl} memicon" title="{$point} 포인트 ({$percent}%)
+레벨: {$level}/{$level_max}">
+					<img src="/modules/point/icons/coa/{$level}.gif" alt="[레벨:{$level}]">{$val->nick_name}</span>
+				<span class="time">{zdate($val->regdate,"Y.m.d")}</span>
+			</span>
+		</a>
+
+	</li>
+
+</ul>
+
+<div class="write-cmt pagination">
+	
+	<span>
+		<button class="prev d1_btn">이전</button>
+		<span class="now_page">{$page}</span> / <span class="last_page">{$page_navigation->last_page}</span>
+		<button class="next d1_btn">다음</button>
+	</span>
+
+</div>
+
+</div>

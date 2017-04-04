@@ -1,0 +1,35 @@
+<div id="menu_member_info">
+
+<div class="top-comment">
+	<h3>작성글 보기 <strong>[{$total_count}]</strong><button type="button" class="d1_btn" id="menu_member_back">돌아가기</button></h3>
+</div>
+
+<ul cond="$document_list" id="list-member">
+	<li loop="$document_list => $no, $val">
+
+		<a href="{getUrl('', 'document_srl', $val->document_srl)}">
+			<span class="title">{htmlspecialchars($val->get('title'), ENT_COMPAT | ENT_HTML401, 'UTF-8', false)}</span>
+			<span class="auth">
+				<span class="bTitle">{$val->browser_title}</span>
+				<span class="member_{$val->get('member_srl')} memicon" title="{$point} 포인트 ({$percent}%)
+레벨: {$level}/{$level_max}">
+					<img src="/modules/point/icons/coa/{$level}.gif" alt="[레벨:{$level}]">{$val->get('nick_name')}</span>
+				<span class="time">{zdate($val->get('regdate'),"Y.m.d")}</span>
+			</span>
+		</a>
+
+	</li>
+
+</ul>
+
+<div class="write-doc pagination">
+	
+	<span>
+		<button class="prev d1_btn">이전</button>
+		<span class="now_page">{$page}</span> / <span class="last_page">{$page_navigation->last_page}</span>
+		<button class="next d1_btn">다음</button>
+	</span>
+
+</div>
+
+</div>

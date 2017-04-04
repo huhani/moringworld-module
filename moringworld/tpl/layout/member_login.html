@@ -1,0 +1,26 @@
+<div class="top-comment">
+	<h3>로그인</h3>
+</div>
+
+<form action="./" method="POST" id="menu_member_login">
+	<input type="hidden" name="module" value="member">
+	<input type="hidden" name="act" value="procMemberLogin">
+	<input type="hidden" name="redirect_url" id="redirect_url" value="{getUrl('')}">
+	<input type="hidden" name="xe_validator_id" value="modules/member/m.skin/default/login_form/1">
+	<ul>
+		<li><label for="id">아이디</label><input name="user_id" type="text" id="id" value=""></li>
+		<li><label for="pw">비밀번호</label><input name="password" type="password" id="pw" value=""></li>
+	</ul>
+	<div class="btnbox">
+		<div class="fl">
+			<input name="keep_signed" type="checkbox" value="Y" id="autoLogin"> <label for="autoLogin">로그인 유지</label>
+		</div>
+	</div>
+	<div style="margin: 30px">
+	</div>
+	<div class="loginBtnArea">
+		<span class="loginBtn">
+			<input class="d1_btn" type="submit" value="로그인">
+		</span>
+	</div>
+</form>

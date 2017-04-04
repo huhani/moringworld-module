@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<module>
+	<grants />
+	<permissions />
+    <actions>
+        <action name="getMoringWorldCommentGrant" type="model" />
+        <action name="getMoringWorldMemberPage" type="model" />
+        <action name="getMoringWorldMemberScrapPage" type="model" />
+        <action name="getMoringWorldMemberWriteDocument" type="model" />
+        <action name="getMoringWorldMemberWriteComment" type="model" />
+        <action name="getMoringWorldModifyMemberInfo" type="model" />
+        <action name="getMoringWorldModifyMemberPassword" type="model" />
+
+    </actions>
+	<menus>
+		<menu name="moringworld" type="all">
+			<title xml:lang="ko">모링월드 XE확장</title>
+		</menu>
+	</menus>
+</module>

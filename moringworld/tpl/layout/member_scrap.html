@@ -1,0 +1,44 @@
+<div id="menu_member_info">
+
+<div class="top-comment">
+	<h3>스크랩 보기 <strong>[{$total_count}]</strong><button type="button" class="d1_btn" id="menu_member_back">돌아가기</button></h3>
+</div>
+
+<ul cond="$document_list" id="list-member">
+	<li loop="$document_list => $no, $val">
+		<!--@if(!$val->document_srl)-->
+		<a href="{getUrl('', 'document_srl', $val->document_srl)}">
+			<span class="title">{htmlspecialchars($val->title, ENT_COMPAT | ENT_HTML401, 'UTF-8', false)}</span>
+			<span class="auth">
+				<span class="bTitle">unknown</span>
+				<span class="member_0 memicon">unknown</span>
+				<span class="time">{zdate($val->regdate,"Y.m.d")}</span>
+			</span>
+		</a>
+		<!--@else-->
+		<a href="{getUrl('', 'document_srl', $val->document_srl)}">
+			<span class="title">{htmlspecialchars(cut_str(strip_tags($val->title), 30), ENT_COMPAT | ENT_HTML401, 'UTF-8', false)}</span>
+			<span class="auth">
+				<span class="bTitle">{$val->browser_title}</span>
+				<span class="member_{$val->member_srl} memicon" title="{$val->point} 포인트 ({$val->percent}%)
+레벨: {$val->level}/{$level_max}">
+					<img src="/modules/point/icons/coa/{$val->level}.gif" alt="[레벨:{$val->level}]">{$val->nick_name}</span>
+				<span class="time">{zdate($val->regdate,"Y.m.d")}</span>
+			</span>
+		</a>
+		<!--@end-->
+	</li>
+
+</ul>
+
+<div class="scrap pagination">
+	
+	<span>
+		<button class="prev d1_btn">이전</button>
+		<span class="now_page">{$page}</span> / <span class="last_page">{$total_page}</span>
+		<button class="next d1_btn">다음</button>
+	</span>
+
+</div>
+
+</div>
